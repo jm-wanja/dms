@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\User;
+use App\Models\Role;
+use App\Models\PrivateDocument;
+use App\Models\PublicDocument;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +15,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call('UsersTableSeeder');
+        $this->call('UserTableSeeder');
+        $this->call('RoleTableSeeder');
+        $this->call('PrivateDocumentsTableSeeder');
+        $this->call('PublicDocumentTableSeeder');
+        $this->command->info('DMS app seeds finished.');
+
     }
 }
